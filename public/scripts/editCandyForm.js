@@ -1,4 +1,4 @@
-const add_button = document.querySelector(".add-candy-button");
+const id = location.href.split("/")[4];
 const name_input = document.getElementById("name");
 const img_url_input = document.getElementById("img_url");
 const quantity_input = document.getElementById("quantity");
@@ -7,9 +7,26 @@ const flavorInput = document.getElementById("flavor");
 const priceInput = document.getElementById("price");
 const edit_button = document.getElementById("edit");
 
-fetchFunction("/categories").then((res) => createListWithId("category", res));
-fetchFunction("/flavors").then((res) => createListWithId("flavor", res));
-
+const fillForm = (data) => {
+  name_input.value = data[0].name;
+  img_url_input.value = data[0].img_url;
+  quantity_input.value = data[0].quantity;
+  categoryInput.value = data[0].category_id;
+  flavorInput.value = data[0].flavor_id;
+  priceInput.value = data[0].price;
+};
+const createListWithId = (type, data) => {
+  data.forEach((element) => {
+    let option = document.createElement("option");
+    option.textContent = element.name;
+    option.value = element.id;
+    if (type === "category") {
+      categoryInput.append(option);
+    } else if (type === "flavor") {
+      flavorInput.append(option);
+    }
+  });
+};
 const validationDOM = (data) => {
   const nameDiv = document.querySelector(".nameDiv");
   const img_urlDiv = document.querySelector(".img_urlDiv");
@@ -67,7 +84,11 @@ const validationDOM = (data) => {
     }
   });
 };
-add_button.addEventListener("click", () => {
+
+fetchFunction("/categories").then((res) => createListWithId("category", res));
+fetchFunction("/flavors").then((res) => createListWithId("flavor", res));
+fetchFunction(`/candy/${id}`).then((res) => fillForm(res));
+edit_button.addEventListener("click", () => {
   let data = {
     name: name_input.value,
     img_url: img_url_input.value,
@@ -76,5 +97,5 @@ add_button.addEventListener("click", () => {
     category_id: categoryInput.value,
     flavor_id: flavorInput.value,
   };
-  fetchAdd(`/add_candy`, data);
+  fetchEdit(`/updateCandy/${id}`, data);
 });
