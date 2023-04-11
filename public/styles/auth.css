@@ -1,0 +1,33 @@
+.add-candy {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+}
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius:10px ;
+}
+
+.form-title {
+    color: #000;
+   margin-bottom: 0;
+}
+label.input-label {
+    color: #000;
+}
+
+.back-form {
+    margin: 15px auto;
+    font-size: 18px;
+}
+
+.back-form a {
+    padding: 10px;
+    color: #FBAFBC;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
