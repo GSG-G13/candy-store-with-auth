@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-color: #fbafbc;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+
+input {
+    border: 0;
+    outline: 0;
+}
+
+input:focus {
+    outline: none !important;
+}
+
+label.input-label {
+    color: white;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+button.input {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.add-candy {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    position: absolute;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-title {
+    margin-bottom: 20px;
+    margin-top: 30px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.input {
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid rgb(182, 181, 181);
+    color: #333;
+    font-size: 16px;
+}
+
+#submit,
+#next {
+    border-radius: 5px;
+    text-align: center;
+}
+
+@media (min-width: 1200px) {
+    .app-title {
+        font-size: 60px;
+    }
+
+    #add-candy-form {
+        width: 50%;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* set background image */
+.background {
+    background-image: #fbafbc;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* create candy icons */
+.candy-icon {
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    position: absolute;
+    animation: candy-fall 9s linear infinite;
+}
+
+/* animate candy icons */
+@keyframes candy-fall {
+    from {
+        top: -50px;
+    }
+
+    to {
+        top: 100%;
+    }
+}
+
+/* position candy icons */
+.candy-icon:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+    background-image: url('../imgs/candy.png');
+}
+
+.candy-icon:nth-child(2) {
+    top: 20%;
+    left: 40%;
+    animation-delay: 1s;
+    background-image: url('../imgs/lolipop.png');
+}
+
+.candy-icon:nth-child(3) {
+    top: 30%;
+    left: 60%;
+    animation-delay: 2s;
+    background-image: url('../imgs/candy.png');
+}
+
+.candy-icon:nth-child(4) {
+    top: 40%;
+    left: 80%;
+    animation-delay: 3s;
+    background-image: url('../imgs/candy2.png');
+}
+
+.candy-icon:nth-child(5) {
+    top: 50%;
+    left: 20%;
+    animation-delay: 4s;
+    background-image: url('../imgs/lolipop.png');
+}
+
+.candy-icon:nth-child(6) {
+    top: 60%;
+    left: 40%;
+    animation-delay: 5s;
+    background-image: url('../imgs/candy.png');
+}
+
+.candy-icon:nth-child(7) {
+    top: 70%;
+    left: 60%;
+    animation-delay: 6s;
+    background-image: url('../imgs/candy2.png');
+}
+
+.candy-icon:nth-child(8) {
+    top: 80%;
+    left: 80%;
+    animation-delay: 7s;
+    background-image: url('../imgs/lolipop.png');
+}
+
+.add-candy-button {
+    align-items: center;
+    appearance: none;
+    background-image: #fff;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #333;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono", monospace;
+    height: 40px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s, transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.add-candy-button:focus,
+select:focus {
+    box-shadow: #fbafbc 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #fbafbc 0 -3px 0 inset;
+}
+
+.add-candy-button:hover,
+select:hover {
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #fbafbc 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.add-candy-button:active,
+select:active {
+    box-shadow: #fbafbc 0 3px 7px inset;
+    transform: translateY(2px);
+}

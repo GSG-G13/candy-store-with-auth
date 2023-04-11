@@ -1,0 +1,38 @@
+{
+  "name": "candy-store-with-auth",
+  "version": "1.0.0",
+  "description": "candy store with authentication",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "test": " cross-env NODE_ENV=test jest",
+    "build:db": "cross-env NODE_ENV=development node src/database/config/run_build",
+    "prod:build:db": "cross-env NODE_ENV=production node src/database/config/run_build",
+    "build": "npm install && npm run build:db"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G13/candy-store-with-auth.git"
+  },
+  "author": "haitham & mohammad & Abeer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G13/candy-store-with-auth/issues"
+  },
+  "homepage": "https://github.com/GSG-G13/candy-store-with-auth#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}
