@@ -13,10 +13,16 @@
 
 .form-title {
     color: #000;
-   margin-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 10px;
 }
 label.input-label {
     color: #000;
+    margin-top: 15px;
+}
+.input {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .back-form {

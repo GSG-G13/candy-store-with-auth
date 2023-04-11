@@ -12,6 +12,7 @@ const {
   oneCat,
   updateCandies,
 } = require("../controller");
+const signupController = require("../controller/auth/signupController");
 
 const router = express.Router();
 
@@ -26,5 +27,6 @@ router.get("/flavors", getFlav);
 router.get("/addCandyForm", getAddForm);
 router.get("/oneFlav/:flavor", oneFlav);
 router.get("/oneCat/:category", oneCat);
+router.post('/signup',signupController)
 
 module.exports = router;
