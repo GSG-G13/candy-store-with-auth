@@ -86,6 +86,9 @@ button.input {
     #add-candy-form {
         width: 50%;
     }
+    #edit-candy-form {
+        width: 50%;
+    }
 }
 
 .wrapper {
