@@ -24,7 +24,7 @@ CREATE TABLE candy (
 );
 CREATE TABLE users (
     id SERIAL PRIMARY key,
-    username VARCHAR(255) UNIQUE not null,
+    username VARCHAR(30) UNIQUE not null,
     email VARCHAR(255) UNIQUE not null,
     password VARCHAR(255) not null,
     role VARCHAR(6) not null

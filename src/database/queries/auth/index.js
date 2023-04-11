@@ -1,2 +1,2 @@
-const getuser = require('./getusers');
-module.exports={getuser};
+const {checkUser} = require('./checkUser');
+module.exports={checkUser};

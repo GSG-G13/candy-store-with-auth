@@ -19,4 +19,6 @@ const options = {
     connectionString: dbURl,
     ssl,
 };
-module.exports= new Pool(options);
+
+const dbConnection = new Pool(options);
+module.exports= {dbConnection};
