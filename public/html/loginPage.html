@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/auth.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body>
+    <!-- create candy wrapper -->
+    <div class="wrapper">
+      <div class="background"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+      <div class="candy-icon"></div>
+  </div>
+  <div class="add-candy">
+      <form action="/login" method="post" class="form" id="add-candy-form">
+      <h2 class="form-title">login</h2>
+          <label class="input-label" for="name">Name: </label>
+          <input class="input" type="text" name="name" required title="At least 3 letters & less than 30"
+              placeholder="User Name">
+  
+
+          <label class="input-label" for="password">Password: </label>
+          <input class="input" type="number" name="password" required placeholder="Enter Your Password">
+  
+          <button class="input add-candy-button" type="submit">login</button>
+
+          <span class="back-form">Create new account<a href="/signup">SIGNUP</a></span>
+      </form>
+      </div>
+  </body>
+</html>
