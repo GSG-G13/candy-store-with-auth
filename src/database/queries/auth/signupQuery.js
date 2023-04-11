@@ -4,8 +4,8 @@ const addUserQuery = (addUser) => {
   const { username, email, password } = addUser
   sql = {
     text:
-      'INSERT INTO users (username,email,password) VALUES($1,$2,$3)',
-    values: [username, email, password],
+      'INSERT INTO users (username,email,password, role) VALUES($1,$2,$3, $4) RETURNING id, username, email, role',
+    values: [username, email, password, 'user'],
   }
   return connection.query(sql)
 }
