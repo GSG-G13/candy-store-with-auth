@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candy Store🍭</title>
-    <link rel="stylesheet" href="./styles/main.css">
-</head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../styles/form.css">
+    <link rel="stylesheet" href="../styles/auth.css">
 
+</head>
 <body>
+    <!-- create candy wrapper -->
     <div class="wrapper">
         <div class="background"></div>
         <div class="candy-icon"></div>
@@ -20,26 +21,35 @@
         <div class="candy-icon"></div>
         <div class="candy-icon"></div>
         <div class="candy-icon"></div>
-        <h1 class="title">Candy Store</h1>
-        <div class="selectors">
-            <select name="category_id" class="category_id input" required>
-                <option value="">select category</option>
-            </select>
-
-            <select name="flavor_id" class="flavor_id input" required>
-                <option value="">select Flavor</option>
-            </select>
-            <button class="addCandyButton" type="button">Add New Candy</button>
-        </div>
-
-        <div class="card_container"></div>
     </div>
+    <div class="add-candy">
+        <div action="/signup" method="post" class="form" id="add-candy-form">
+        <h2 class="form-title">Sign Up</h2>
+            <label class="input-label" for="name">User Name: </label>
+            <input class="input username-input" type="text" name="username" required title="At least 3 letters & less than 30"
+                placeholder="User Name">
+            <div class="usernameContent"></div>
+           
+            <label class="input-label" for="email">Email: </label>
+            <input class="input email-input" type="email" name="email" required placeholder="Enter Your Email">
+             <div class="emailContent"></div>
+        
+            <label class="input-label" for="password">Password: </label>
+            <input class="input password-input" type="password" name="password" required placeholder="Enter Your Password">
+            <div class="passwordContent"></div>
 
+        <label class="input-label" for="password">Confirm Password: </label>
+        <input class="input confirm-input" type="password" name="confirmPassword" required placeholder="Enter Your Confirm Password">
+        <div class="confirmPasswordContent"></div> 
+        
+        <button class="input" type="submit" id="signup_btn">Sign Up</button>
 
+            <span class="back-form">Already a user<a href="/login">LOGIN</a></span>
+        </div>
+        </div>
+        <script src="./scripts/fetch.js"></script>
+        <script src="./scripts/domSignup.js"></script>
+        <script src="./scripts/signupValidation.js"></script>
 
 </body>
-<script src="scripts/fetch.js"></script>
-<script src="scripts/helper.js"></script>
-<script src="scripts/index.js"></script>
-
 </html>

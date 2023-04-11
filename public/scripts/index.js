@@ -1,7 +1,6 @@
 const add_button = document.querySelector('.addCandyButton'); 
 const delete_button = document.querySelector('.addCandyButton'); 
 
-
 fetchFunction('/candies')
 .then((res) =>createCard(res));
 
@@ -34,3 +33,4 @@ flavor_id.addEventListener('change',()=>{
     fetchFunction(`/oneFlav/${flavor_id.value}`)
 .then((res) =>createCard(res));
 })
+

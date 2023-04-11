@@ -35,3 +35,9 @@ const fetchAdd = (url, data) =>
       }
     })
     .catch((error) => console.log(error));
+    
+const fetchSignUp = (url,data) => fetch(url,{
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+}).then((data) => data.json())
