@@ -1,4 +1,5 @@
 const express = require("express");
+const {login} = require("../controller/auth/loginController");
 const {
   getCandies,
   addNewCandy,
@@ -28,5 +29,13 @@ router.get("/addCandyForm", getAddForm);
 router.get("/oneFlav/:flavor", oneFlav);
 router.get("/oneCat/:category", oneCat);
 router.post('/signup',signupController)
+router.post("/login",login);
+/* router.use((err, req, res, next) => {
+  res.status(500).sendFile(join(__dirname, '..', '..', 'public', '500', '500.html'));
+  next();
+});
+router.use((req, res) => {
+  res.status(404).sendFile(join(__dirname, '..', '..', 'public', '404', '404.html'));
+}); */
 
 module.exports = router;

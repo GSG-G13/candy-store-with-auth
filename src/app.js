@@ -1,16 +1,11 @@
 const express = require('express');
-const { join } = require('path');
-const router = require('./routes/router');
-const {PORT} = require('dotenv');
+const middleware = require('./middleware/appMiddleware');
+require('env2')('.env');
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+middleware(app);
 
-app.use(express.static(join(__dirname,'..','public')));
-
-app.set('port',PORT || 5000);
-app.use(router);
+app.set('port', process.env.PORT || 5000);
 
 module.exports = app;
