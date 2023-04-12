@@ -1,24 +1,27 @@
-const {checkUser} = require('../../../database/queries/auth')
-const {sign} = require('jsonwebtoken');
+const { checkUser } = require("../../../database/queries/auth");
+const { sign } = require("jsonwebtoken");
 const secretKey = process.env.SECRET_KEY;
-const { compare } = require('bcrypt');
-const { loginSchema } = require('../../../utils/validation');
-const login = (req,res)=>{
-  const {username,email,password } = req.body;
+const { compare } = require("bcrypt");
+const { loginSchema } = require("../../../utils/validation");
+const login = (req, res) => {
+  const { name, password } = req.body;
+  console.log(req.body);
   const { error } = loginSchema.validate(
-    { email, password },
+    { userName: name, password },
     { abortEarly: false }
   );
   if (error) {
+    console.log(error);
     return res.json({
-      msg: 'check your email or passwords',
+      msg: "check your email or passwords",
     });
   }
 
-  checkUser(username)
+  checkUser(name)
     .then((data) => {
+      console.log(data);
       if (!data.rows.length) {
-        return res.send('Go create account!');
+        return res.send("Go create account!");
       } else {
         const { password: hashedPassword } = data.rows[0];
         return compare(password, hashedPassword);
@@ -28,24 +31,22 @@ const login = (req,res)=>{
       if (isChecked) {
         sign(
           {
-            id,
-            username,
+            name,
             email,
-            role
+            role,
           },
           secretKey,
           (err, token) => {
-            res.cookie('access_token', token).json({ msg: 'success' });
+            res.cookie("access_token", token).json({ msg: "success" });
           }
         );
       } else {
-        res.status(400).json({ msg: 'please write a correct password' });
+        res.status(400).json({ msg: "please write a correct password" });
       }
     })
     .catch((err) => {
       console.log(err);
     });
-}
-
+};
 
 module.exports = login;
