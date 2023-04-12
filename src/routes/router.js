@@ -18,8 +18,13 @@ const {
   updateCandies,
   getAdminCandy,
   getUserCandyPage,
+  addNewCategory,
+  addCategoryPage,
+  addNewFlavor,
+  addFlavorPage,
 } = require("../controller");
 const signupController = require("../controller/auth/signupController");
+const login = require("../controller/auth/loginController/loginController");
 
 const router = express.Router();
 
@@ -38,7 +43,14 @@ router.post("/signup", signupController);
 router.get("/adminCandy", getAdminCandy);
 router.get("/login", getLoginPage);
 router.get("/userCandyStore", getUserCandyPage); //user candy store.
-router.post("/login", checkUserAuth, checkUserRole);
+// router.post("/login", checkUserAuth, checkUserRole);
+router.post("/login", login);
+
+router.get("/addCategory", addCategoryPage);
+router.post("/addCategory", addNewCategory);
+
+router.get("/addFlavor", addFlavorPage);
+router.post("/addFlavor", addNewFlavor);
 /* router.use((err, req, res, next) => {
   res.status(500).sendFile(join(__dirname, '..', '..', 'public', '500', '500.html'));
   next();

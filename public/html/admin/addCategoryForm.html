@@ -9,7 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,700;1,300;1,400&family=Roboto&display=swap"
         rel="stylesheet" />
-    <title>Add New Candy</title>
+    <title>Add New Category</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
         <div class="candy-icon"></div>
     </div>
     <div class="add-candy">
-        <h2 class="form-title">Add Candy</h2>
+        <h2 class="form-title">Add Category</h2>
         <div class="form" id="add-candy-form">
 
             <label class="input-label" for="name">Name: </label>
@@ -34,38 +34,15 @@
                 placeholder="Candy Name">
             <div class="nameDiv form"></div>
             
-            <label class="input-label" for="img_url">Candy Image: </label>
+            <label class="input-label" for="img_url">Category Image: </label>
             <input class="input" type="text" name="img_url" id="img_url" required placeholder="Candy Image">
             <div class="img_urlDiv form"></div>
             
-            <label class="input-label" for="name">Quantity: </label>
-            <input class="input" type="number" name="quantity" id = 'quantity' required placeholder="Quantity">
-            <div class="quantityDiv form"></div>
-           
-            <label class="input-label" for="name">Price: </label>
-            <input class="input" type="number" name="price" id = 'price' required placeholder="Price">
-            <div class="priceDiv form"></div>
-            
-            <label class="input-label" for="category_id">Category:</label>
-            <select name="category_id" class="category_id input" id ='category' required>
-                <option value="">select category</option>
-            </select>
-            <div class="categoryDiv form"></div>
-            
-            <label class="input-label" for="flavor_id">Flavor:</label>
-            <select name="flavor_id" class="flavor_id input" id ='flavor' required>
-                <option value="">select Flavor</option>
-            </select>
-            <div class="flavorDiv form"></div>
-
-            <button class="input add-candy-button" type="button">Add Candy</button>
+            <button class="input add-candy-button" type="button">Add Category</button>
         </div>
     </div>
 </body>
 
 <script src="../../scripts/fetch.js"></script>
-<script src="../../scripts/helper.js"></script>
-<script src="../../scripts/labelError.js"></script>
-<script src="../../scripts/form.js"></script>
-
+<script src="../../scripts/categoryForm.js"></script>
 </html>
