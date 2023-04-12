@@ -25,45 +25,27 @@ const validationDOM = (data) => {
   flavorDiv.textContent = "";
   data.forEach((element) => {
     if (element.path[0] === "name") {
-      nameDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      nameDiv.append(label);
+      createLabelError(nameDiv, element);
     }
 
     if (element.path[0] === "img_url") {
-      img_urlDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      img_urlDiv.append(label);
+      createLabelError( img_urlDiv, element);
     }
 
     if (element.path[0] === "quantity") {
-      quantityDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      quantityDiv.append(label);
+      createLabelError( quantityDiv, element);
     }
 
     if (element.path[0] === "price") {
-      priceDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      priceDiv.append(label);
+      createLabelError( priceDiv, element);
     }
 
     if (element.path[0] === "category_id") {
-      categoryDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      categoryDiv.append(label);
+      createLabelError( categoryDiv, element);
     }
 
     if (element.path[0] === "flavor_id") {
-      flavorDiv.textContent = "";
-      const label = document.createElement("label");
-      label.textContent = element.message;
-      flavorDiv.append(label);
+      createLabelError( flavorDiv, element);
     }
   });
 };
