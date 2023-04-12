@@ -13,7 +13,7 @@ const { getCat, addNewCategory, addCategoryPage } = require("./store/category");
 const { getFlav, addNewFlavor, addFlavorPage } = require("./store/flaver");
 const { oneFlav } = require("./store/oneFlavor");
 const { oneCat } = require("./store/oneCategory");
-const { checkUserAuth, checkUserRole, signup } = require("./auth");
+const { checkUserAuth, checkUserRole, signup,logoutController } = require("./auth");
 module.exports = {
   getCandies,
   getCat,
@@ -35,4 +35,5 @@ module.exports = {
   addCategoryPage,
   addNewFlavor,
   addFlavorPage,
+  logoutController
 };
