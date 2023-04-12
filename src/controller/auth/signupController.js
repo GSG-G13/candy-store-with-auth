@@ -23,15 +23,11 @@ const signupController = (req, res) => {
     });
     return;
   }
-  console.log(value);
-
-  // const { username, email } = req.body;
   bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
     const data = { username, email, password: hash };
-
     addUserQuery(data)
       .then((data) => {
-        const user = data.rows[0];
+        const user = { name: data.rows[0].username, role: data.rows[0].role };
         jwt.sign(user, process.env.Secret_key, (err, token) => {
           res.cookie("token", token);
           res.send({ error: false });
