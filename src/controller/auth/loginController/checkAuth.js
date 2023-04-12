@@ -1,10 +1,11 @@
-const jwt = require('jsonwebtoken');
-require('env2')('.env');
+const jwt = require("jsonwebtoken");
+require("env2")(".env");
 
 const secretKey = process.env.SECRET_KEY;
 
 const checkAuth = (req, res, next) => {
-  const token = req.cookies.token;
+  const token = req.cookies;
+  console.log(req.cookies);
   jwt.verify(token, secretKey, (err, decodeToken) => {
     if (err) {
       res.status(404).json("You are not authorized");
@@ -14,7 +15,7 @@ const checkAuth = (req, res, next) => {
         req.myToken = decodeToken;
         next();
       } else {
-        res.send('Login Page');
+        res.send("Login Page");
       }
     }
   });

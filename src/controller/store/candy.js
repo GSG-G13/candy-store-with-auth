@@ -29,7 +29,7 @@ const addNewCandy = (req, res) => {
     return;
   } else {
     addCandy(candyInfo)
-      .then(() => res.redirect("/adminCandy"))
+      .then(() => res.send({ error: false }))
       .catch((err) => console.log("err:", err));
   }
 };

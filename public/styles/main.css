@@ -12,6 +12,29 @@ body {
 
 }
 
+.container-box {
+    width: 100%;
+    height: 66px;
+    background: rgba(251, 175, 188,0.7);
+}
+
+.navbar {
+    height: 100%;
+    margin: 0 3%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    color: #fff;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+}
+
 .title {
     text-align: center;
     color: #fff;
@@ -20,7 +43,10 @@ body {
     padding: 20px;
 }
 
-.addCandyButton {
+.addCandyButton,
+.addFlavorButton,
+.addCategoryButton,
+.logout {
     align-items: center;
     appearance: none;
     background-image: #fff;
@@ -49,10 +75,21 @@ body {
     white-space: nowrap;
     will-change: box-shadow, transform;
     font-size: 18px;
-    margin-top: 20px;
+    margin-right: 20px;
 }
 
-.delete {
+.userName {
+    display: flex;
+    align-items: center;
+}
+
+.userName .name {
+    font-size: 18px;
+    color: #fff;
+}
+
+.delete,
+.add {
     height: 30px;
     width: fit-content;
     font-size: 16px;
@@ -67,6 +104,8 @@ select:focus {
 }
 
 .addCandyButton:hover,
+.addFlavorButton:hover,
+.addCategoryButton:hover,
 select:hover {
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #fbafbc 0 -3px 0 inset;
     transform: translateY(-2px);
