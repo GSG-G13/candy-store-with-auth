@@ -30,7 +30,19 @@ CREATE TABLE users (
     role VARCHAR(6) not null
 );
 insert into users (username, email, password, role)
-values ('admin', 'admin@admin.com', '12345678', 'admin');
+values (
+        'admin',
+        'admin@admin.com',
+        '$2b$10$d4K/2Gd.8k/2C7TADt0XIuvn9lpUZQF1COwgH/rIf/q5I1obtcMmy',
+        'admin'
+    );
+insert into users (username, email, password, role)
+values(
+        'batrawi',
+        'batrawi@gmail.com',
+        '$2b$10$d4K/2Gd.8k/2C7TADt0XIuvn9lpUZQF1COwgH/rIf/q5I1obtcMmy',
+        'user'
+    );
 INSERT INTO category (name, img_url)
 values (
         'Gummy candies',
