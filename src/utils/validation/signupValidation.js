@@ -1,7 +1,7 @@
 const Joi = require('joi')
 
 const signupSchema = Joi.object({
-  username: Joi.string().alphanum().required(),
+  username: Joi.string().pattern(new RegExp('^[a-zA-Z0-9 ._#?!-@]')).required(),
   email: Joi.string()
     .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net', 'org'] } })
     .required(),
