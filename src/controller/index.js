@@ -7,6 +7,7 @@ const {
   getCandyById,
   updateCandies,
   getAdminCandy,
+  getUserCandyPage,
 } = require("./store/candy");
 const { getCat } = require("./store/category");
 const { getFlav } = require("./store/flaver");
@@ -29,4 +30,5 @@ module.exports = {
   checkUserRole,
   signup,
   getAdminCandy,
+  getUserCandyPage,
 };

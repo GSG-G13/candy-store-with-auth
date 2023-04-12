@@ -99,6 +99,21 @@ const getAdminCandy = (req, res) => {
     )
   );
 };
+
+const getUserCandyPage = (req, res) => {
+  res.sendFile(
+    join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "public",
+      "html",
+      "user",
+      "userCandyStore.html"
+    )
+  );
+};
 const getCandyById = (req, res) => {
   getCandyId(req.params.id)
     .then((result) => {
@@ -116,4 +131,5 @@ module.exports = {
   getCandyById,
   updateCandies,
   getAdminCandy,
+  getUserCandyPage,
 };

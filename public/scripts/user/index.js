@@ -1,5 +1,3 @@
-const add_button = document.querySelector('.addCandyButton'); 
-// const delete_button = document.querySelector('.addCandyButton'); 
 
 fetchFunction('/candies')
 .then((res) =>createCard(res));
@@ -10,9 +8,7 @@ fetchFunction('/categories')
 fetchFunction('/flavors')
 .then((res) =>createList('flavor',res));
 
-add_button.addEventListener('click',()=>{
-    window.location.href = "/addCandyForm";
-});
+
 
 category_id.addEventListener('change',()=>{
     flavor_id.value = "";
