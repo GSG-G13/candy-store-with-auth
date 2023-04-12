@@ -1,7 +1,10 @@
 const { addUserQuery } = require('../../database/queries/auth')
 const { signupSchema } = require('../../utils/validation')
 
-var jwt = require('jsonwebtoken')
+const jwt = require('jsonwebtoken')
+// const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 require('dotenv').config()
 
 const signupController = (req, res) => {
@@ -25,10 +28,13 @@ console.log(value)
   // .then((err) => res.json({err:false}))
     .then((data) => {
       const user = data.rows[0]
-      console.log(user)
       jwt.sign(user, process.env.Secret_key, (err, token) => {
         res.cookie('token', token).redirect('/candies')
       })
+      // bcrypt.hash(req.body.password,saltRounds,(err,hash) => {
+      //   req.body.password = hash;
+      // })
+
     })
     .catch((err) => {
       console.log(err)
