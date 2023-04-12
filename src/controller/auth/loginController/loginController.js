@@ -2,7 +2,7 @@ const { checkUser } = require("../../../database/queries/auth");
 const { sign } = require("jsonwebtoken");
 const secretKey = process.env.SECRET_KEY;
 // const { compare } = require("bcrypt");
-const bcrypt = require('bcrypt');
+const bcrypt = require("bcrypt");
 const { loginSchema } = require("../../../utils/validation");
 const login = (req, res) => {
   const { name, password } = req.body;
@@ -18,20 +18,19 @@ const login = (req, res) => {
     });
   }
 
-let role;
+  let role;
 
   checkUser(name)
     .then((data) => {
-      console.log(data.rows,"from data");
       if (!data.rows.length) {
         return res.send("Go create account!");
       } else {
         const { password: hashedPassword } = data.rows[0];
         role = data.rows[0].role;
 
-        return bcrypt.compare(password, hashedPassword).then(function(result) {
+        return bcrypt.compare(password, hashedPassword).then(function (result) {
           return result;
-      });
+        });
       }
     })
     .then((isChecked) => {
@@ -44,10 +43,10 @@ let role;
           secretKey,
           (err, token) => {
             res.cookie("token", token);
-            if (role==="admin"){
-              res.redirect('/adminCandy')
-            }else {
-              res.redirect('/userCandyStore')
+            if (role === "admin") {
+              res.redirect("/adminCandy");
+            } else {
+              res.redirect("/userCandyStore");
             }
           }
         );
@@ -58,9 +57,6 @@ let role;
     .catch((err) => {
       console.log(err);
     });
-
-
-  };
-  
+};
 
 module.exports = login;
