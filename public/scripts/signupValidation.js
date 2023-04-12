@@ -11,7 +11,6 @@ signup_btn.addEventListener("click", () => {
     password: passwordUser.value,
     confirmPassword: confirmPassword.value,
   }).then((data) => {
-    console.log(data.error);
     if (data.error === true) {
       validationSignup(data.data.errors);
     } else {
