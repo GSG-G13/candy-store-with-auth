@@ -106,6 +106,7 @@ select:focus {
 .addCandyButton:hover,
 .addFlavorButton:hover,
 .addCategoryButton:hover,
+.logout:hover,
 select:hover {
     box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #fbafbc 0 -3px 0 inset;
     transform: translateY(-2px);
@@ -218,6 +219,7 @@ select {
     position: absolute;
     animation: candy-fall 9s linear infinite;
 }
+
 
 /* animate candy icons */
 @keyframes candy-fall {
