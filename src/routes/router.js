@@ -23,6 +23,7 @@ const {
   addFlavorPage,
 } = require("../controller");
 const signupController = require("../controller/auth/signupController");
+const getUserName = require("../controller/auth/getUserName");
 const login = require("../controller/auth/loginController/loginController");
 
 const router = express.Router();
@@ -49,5 +50,6 @@ router.post("/addCategory", checkUserRole, addNewCategory);
 
 router.get("/addFlavor", checkUserRole, addFlavorPage);
 router.post("/addFlavor", checkUserRole, addNewFlavor);
+router.get("/getUsername",getUserName);
 
 module.exports = router;
