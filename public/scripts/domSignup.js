@@ -1,3 +1,11 @@
+const createLabelError = (mainDiv) => {
+  const labelError = document.createElement('label')
+  mainDiv.textContent = ''
+  labelError.style.color = 'red'
+  labelError.textContent = msgError.message
+  mainDiv.appendChild(labelError)
+}
+
 const validationSignup = (data) => {
   const usernameContent = document.querySelector('.usernameContent')
   const emailContent = document.querySelector('.emailContent')
@@ -13,34 +21,18 @@ const validationSignup = (data) => {
 
   data.forEach((msgError) => {
     if (msgError.path[0] === 'username') {
-      const labelError = document.createElement('label')
-      usernameContent.textContent = ''
-      labelError.style.color = 'red'
-      labelError.textContent = msgError.message
-      usernameContent.appendChild(labelError)
+      createLabelError(usernameContent)
     }
 
     if (msgError.path[0] === 'email') {
-      const labelError = document.createElement('label')
-      emailContent.textContent = ''
-      labelError.style.color = 'red'
-      labelError.textContent = msgError.message
-      emailContent.appendChild(labelError)
+      createLabelError(emailContent)
     }
 
     if (msgError.path[0] === 'password') {
-      const labelError = document.createElement('label')
-      passwordContent.textContent = ''
-      labelError.style.color = 'red'
-      labelError.textContent = msgError.message
-      passwordContent.appendChild(labelError)
+      createLabelError(passwordContent)
     }
     if (msgError.path[0] === 'confirmPassword') {
-      const labelError = document.createElement('label')
-      confirmPasswordContent.textContent = ''
-      labelError.style.color = 'red'
-      labelError.textContent = msgError.message
-      confirmPasswordContent.appendChild(labelError)
+      createLabelError(confirmPasswordContent)
     }
   })
 }
