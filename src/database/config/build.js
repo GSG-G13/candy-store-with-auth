@@ -1,7 +1,7 @@
 const { readFileSync } = require("fs");
 const { join } = require("path");
 require("dotenv").config();
-const connection = require("./connection");
+const {dbConnection} = require("./connection");
 
 let sql;
 
@@ -13,6 +13,6 @@ const dbBuild = () => {
     }else if (process.env.NODE_ENV === "production"){
      sql = readFileSync(join(__dirname, "build.sql")).toString();
     }
-    return connection.query(sql);
+    return dbConnection.query(sql);
   };
   module.exports={ dbBuild };
