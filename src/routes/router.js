@@ -35,7 +35,7 @@ router.get("/addCandyForm", getAddForm);
 router.get("/oneFlav/:flavor", oneFlav);
 router.get("/oneCat/:category", oneCat);
 router.post("/signup", signupController);
-router.get("/adminCandy", checkUserRole, getAdminCandy);
+router.get("/adminCandy", getAdminCandy);
 router.get("/login", getLoginPage);
 router.get("/userCandyStore", getUserCandyPage); //user candy store.
 router.post("/login", checkUserAuth, checkUserRole);
