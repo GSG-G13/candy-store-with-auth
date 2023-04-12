@@ -1,5 +1,8 @@
 const express = require("express");
-const {login} = require("../controller/auth/loginController");
+const {
+  checkUserAuth,
+  checkUserRole,
+} = require("../controller/auth/loginController");
 const {
   getCandies,
   addNewCandy,
@@ -12,6 +15,7 @@ const {
   oneFlav,
   oneCat,
   updateCandies,
+  getAdminCandy,
 } = require("../controller");
 const signupController = require("../controller/auth/signupController");
 
@@ -28,8 +32,9 @@ router.get("/flavors", getFlav);
 router.get("/addCandyForm", getAddForm);
 router.get("/oneFlav/:flavor", oneFlav);
 router.get("/oneCat/:category", oneCat);
-router.post('/signup',signupController)
-router.post("/login",login);
+router.post("/signup", signupController);
+router.get("/adminCandy", getAdminCandy);
+// router.post("/login",login);
 /* router.use((err, req, res, next) => {
   res.status(500).sendFile(join(__dirname, '..', '..', 'public', '500', '500.html'));
   next();

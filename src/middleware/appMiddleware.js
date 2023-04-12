@@ -11,6 +11,6 @@ module.exports = (app) => {
   app.use(compression());
   app.disabled('x-powered-by');
   app.use(cookieParse());
-  app.use(express.static(join(__dirname,'..','public')));
+  app.use(express.static(join(__dirname,'..','..','public')));
   app.use(router);
 };
