@@ -21,6 +21,7 @@ const {
   addCategoryPage,
   addNewFlavor,
   addFlavorPage,
+  logoutController,
 } = require("../controller");
 const signupController = require("../controller/auth/signupController");
 const getUserName = require("../controller/auth/getUserName");
@@ -44,6 +45,10 @@ router.get("/adminCandy", checkUserRole, getAdminCandy);
 router.get("/login", getLoginPage); //???????
 router.get("/userCandyStore", getUserCandyPage); 
 router.post("/login", login);
+router.get("/logout", logoutController);
+
+router.get("/addCategory", addCategoryPage); //admin
+router.post("/addCategory", addNewCategory); //admin
 
 router.get("/addCategory", checkUserRole, addCategoryPage);
 router.post("/addCategory", checkUserRole, addNewCategory);

@@ -1,7 +1,5 @@
-
-const logoutController = (req, res)=>{
-  res.clearCookie("access_token").redirect('/login');
-
-}
+const logoutController = (req, res) => {
+  res.clearCookie("token").send({ error: false });
+};
 
 module.exports = logoutController;
