@@ -15,7 +15,7 @@ const fetchEdit = (url, data) =>
       if (err.error === true) {
         validationDOM(err.data.errors);
       } else {
-        location.href = "/";
+        location.href = "/adminCandy";
       }
     })
     .catch((error) => console.log(error));
@@ -31,13 +31,14 @@ const fetchAdd = (url, data) =>
       if (err.error === true) {
         validationDOM(err.data.errors);
       } else {
-        location.href = "/";
+        location.href = "/adminCandy";
       }
     })
     .catch((error) => console.log(error));
-    
-const fetchSignUp = (url,data) => fetch(url,{
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(data)
-}).then((data) => data.json())
+
+const fetchSignUp = (url, data) =>
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  }).then((data) => data.json());

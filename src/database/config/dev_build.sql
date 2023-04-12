@@ -29,7 +29,8 @@ CREATE TABLE users (
     password VARCHAR(255) not null,
     role VARCHAR(6) not null
 );
--- INSERT INTO user (username, email,password,role) values('haitham','haitham@gmail.com','','admin');
+insert into users (username, email, password, role)
+values ('admin', 'admin@admin.com', '12345678', 'admin');
 INSERT INTO category (name, img_url)
 values (
         'Gummy candies',

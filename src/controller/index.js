@@ -5,13 +5,15 @@ const {
   getAddForm,
   getEditForm,
   getCandyById,
-  updateCandies
+  updateCandies,
+  getAdminCandy,
+  getUserCandyPage,
 } = require("./store/candy");
 const { getCat } = require("./store/category");
 const { getFlav } = require("./store/flaver");
 const { oneFlav } = require("./store/oneFlavor");
 const { oneCat } = require("./store/oneCategory");
-const {checkUserAuth,checkUserRole,signup}= require('./auth');
+const { checkUserAuth, checkUserRole, signup } = require("./auth");
 module.exports = {
   getCandies,
   getCat,
@@ -26,5 +28,7 @@ module.exports = {
   updateCandies,
   checkUserAuth,
   checkUserRole,
-  signup
+  signup,
+  getAdminCandy,
+  getUserCandyPage,
 };

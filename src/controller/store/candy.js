@@ -29,14 +29,14 @@ const addNewCandy = (req, res) => {
     return;
   } else {
     addCandy(candyInfo)
-      .then(() => res.redirect("/"))
+      .then(() => res.redirect("/adminCandy"))
       .catch((err) => console.log("err:", err));
   }
 };
 
 const deleteCandies = (req, res) => {
   deleteCandy(req.params.id)
-    .then(() => res.redirect("/")) //
+    .then(() => res.redirect("/adminCandy")) //
     .catch((err) => console.log("err:", err));
 };
 const updateCandies = (req, res) => {
@@ -59,15 +59,61 @@ const updateCandies = (req, res) => {
 };
 const getAddForm = (req, res) => {
   res.sendFile(
-    join(__dirname, "..", "..", "..", "public", "html", "addCandyForm.html")
+    join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "public",
+      "html",
+      "admin",
+      "addCandyForm.html"
+    )
   );
 };
 const getEditForm = (req, res) => {
   res.sendFile(
-    join(__dirname, "..", "..", "..", "public", "html", "editCandyForm.html")
+    join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "public",
+      "html",
+      "admin",
+      "editCandyForm.html"
+    )
+  );
+};
+const getAdminCandy = (req, res) => {
+  res.sendFile(
+    join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "public",
+      "html",
+      "admin",
+      "candyStore.html"
+    )
   );
 };
 
+const getUserCandyPage = (req, res) => {
+  res.sendFile(
+    join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "public",
+      "html",
+      "user",
+      "userCandyStore.html"
+    )
+  );
+};
 const getCandyById = (req, res) => {
   getCandyId(req.params.id)
     .then((result) => {
@@ -84,4 +130,6 @@ module.exports = {
   getEditForm,
   getCandyById,
   updateCandies,
+  getAdminCandy,
+  getUserCandyPage,
 };
